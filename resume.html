@@ -4,19 +4,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Resume Display</title>
-    <link rel="stylesheet" href="style.css"> <!-- Link to CSS -->
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 </head>
 <body>
     <div id="resume">
         <h1>Resume</h1>
-        <p><strong>Name:</strong> <span id="displayName"></span></p>
-        <p><strong>Email:</strong> <span id="displayEmail"></span></p>
-        <p><strong>Phone:</strong> <span id="displayPhone"></span></p>
-        <p><strong>Education:</strong> <span id="displayEducation"></span></p>
-        <p><strong>Skills:</strong> <span id="displaySkills"></span></p>
-        <p><strong>Experience:</strong> <span id="displayExperience"></span></p>
+        <p><strong>Name:</strong> <br><span id="displayName"></span></p>
+        <p><strong>Email:</strong> <br><span id="displayEmail"></span></p>
+        <p><strong>Phone:</strong><br><span id="displayPhone"></span></p>
+    
+        <p><strong>Education:</strong></p>
+        <div id="displayEducation"></div>
+        
+        <p><strong>Skills:</strong></p>
+        <div id="displaySkills"></div>
+        
+        <p><strong>Experience:</strong></p>
+        <div id="displayExperience"></div>
     </div>
+    
+    <!-- Button to download PDF -->
+    <button id="downloadBtn">Download Resume as PDF</button>
+    
+    
 
-    <script src="index.js"></script>
+    <script src="index.js"></script> 
 </body>
 </html>
