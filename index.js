@@ -1,17 +1,14 @@
 // Check if we are on the form page
 var form = document.getElementById("resumeForm");
 if (form) {
-    // Form submission event listener
     form.onsubmit = function (event) {
         event.preventDefault();
-        // Get input values
         var name = document.getElementById("name").value;
         var email = document.getElementById("email").value;
         var phone = document.getElementById("phone").value;
         var education = document.getElementById("education").value; // comma-separated
         var skills = document.getElementById("skills").value; // comma-separated
         var experience = document.getElementById("experience").value; // comma-separated
-        // Store data in localStorage
         localStorage.setItem("name", name);
         localStorage.setItem("email", email);
         localStorage.setItem("phone", phone);
@@ -23,17 +20,14 @@ if (form) {
     };
 }
 else {
-    // Display page logic
-    // Retrieve data from localStorage and show it
     document.getElementById("displayName").innerText = localStorage.getItem("name") || "";
     document.getElementById("displayEmail").innerText = localStorage.getItem("email") || "";
     document.getElementById("displayPhone").innerText = localStorage.getItem("phone") || "";
-    // Retrieve and display education as a list
     var education = localStorage.getItem("education");
     var educationList = education ? education.split(',').map(function (item) { return item.trim(); }) : [];
     var educationContainer = document.getElementById("displayEducation");
     if (educationList.length > 0) {
-        var ul_1 = document.createElement("ul"); // Create a new unordered list
+        var ul_1 = document.createElement("ul");
         educationList.forEach(function (item) {
             var li = document.createElement("li");
             li.innerText = item;
@@ -67,4 +61,23 @@ else {
         });
         experienceContainer.appendChild(ul_3);
     }
+}
+var saveBtn = document.getElementById("saveBtn");
+if (saveBtn) {
+    saveBtn.addEventListener("click", function () {
+        var name = document.getElementById("displayName").value;
+        var email = document.getElementById("displayEmail").value;
+        var phone = document.getElementById("displayPhone").value;
+        var education = document.getElementById("displayEducation").value;
+        var skills = document.getElementById("displaySkills").value;
+        var experience = document.getElementById("displayExperience").value;
+        // Store the edited data back to localStorage
+        localStorage.setItem("name", name);
+        localStorage.setItem("email", email);
+        localStorage.setItem("phone", phone);
+        localStorage.setItem("education", education);
+        localStorage.setItem("skills", skills);
+        localStorage.setItem("experience", experience);
+        alert("Changes saved!");
+    });
 }

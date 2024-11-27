@@ -76,3 +76,24 @@ if (form) {
         experienceContainer.appendChild(ul);
     }
 }
+const saveBtn = document.getElementById("saveBtn");
+if (saveBtn) {
+    saveBtn.addEventListener("click", function () {
+        const name = (document.getElementById("displayName") as HTMLInputElement).value;
+        const email = (document.getElementById("displayEmail") as HTMLInputElement).value;
+        const phone = (document.getElementById("displayPhone") as HTMLInputElement).value;
+        const education = (document.getElementById("displayEducation") as HTMLTextAreaElement).value;
+        const skills = (document.getElementById("displaySkills") as HTMLTextAreaElement).value;
+        const experience = (document.getElementById("displayExperience") as HTMLTextAreaElement).value;
+
+        // Store the edited data back to localStorage
+        localStorage.setItem("name", name);
+        localStorage.setItem("email", email);
+        localStorage.setItem("phone", phone);
+        localStorage.setItem("education", education);
+        localStorage.setItem("skills", skills);
+        localStorage.setItem("experience", experience);
+
+        alert("Changes saved!");
+    });
+}

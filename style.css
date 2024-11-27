@@ -75,18 +75,33 @@ button:hover {
     border-radius: 8px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
-
-p {
+.parent{
+    padding-top: 2px;
+    background-color: rgb(226, 227, 236);
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    
+}
+.child1{
+    display: flex;
+    justify-content: space-evenly;
+}
+.child{
+    display: flex;
+    gap: 2px;
+}
+p { 
+    padding-top: 6%;
     font-size: 16px;
     line-height: 1.6;
     margin: 5px 0;
 }
 
+
 strong {
     color: #333;
 }
 ul {
-    list-style-type: disc;  /* Bulleted list style */
+    list-style-type:disc;  
     padding-left: 20px;
 }
 
